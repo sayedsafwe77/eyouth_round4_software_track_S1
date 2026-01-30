@@ -1,0 +1,76 @@
+/* selectors */
+/* tag name */
+/* class name */
+
+/* specificity */
+/* #head {
+  background-color: red;
+} */
+
+/* p .para {
+  color: turquoise;
+}
+p {
+  color: blue !important;
+}
+.para {
+  color: yellow !important;
+} */
+
+/* button {
+  background-color: red;
+} */
+
+/* .btn {
+  background: yellow;
+  color: black;
+  padding: 10px;
+  border: 1px solid black;
+  outline-style: none;
+} */
+/* @layer base,component,utility; */
+/* @layer {
+  #head {
+    font-size: 5px;
+  }
+}
+@layer {
+  p {
+    font-size: 40px;
+  }
+} */
+/* 
+.btn {
+}
+
+@layer component {
+  p {
+    font-size: 40px;
+  }
+}
+@layer utility {
+  p {
+    font-size: 60px;
+  }
+} */
+
+/* [title~="flower"] {
+  color: green;
+}
+
+section + p {
+  color: purple;
+} */
+
+.header-1 {
+  box-sizing: border-box;
+  background: purple;
+  padding: 10px;
+}
+
+header .hero {
+  background: yellow;
+  width: 100%;
+  height: 30px;
+  margin: 20px;
+}
