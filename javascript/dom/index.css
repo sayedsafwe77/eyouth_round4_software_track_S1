@@ -1,0 +1,22 @@
+.grandparent {
+  background-color: lightblue;
+  height: 300px;
+  width: 200px;
+  padding: 30px;
+}
+.parent {
+  background-color: lightcoral;
+  height: 200px;
+  padding: 30px;
+}
+.child {
+  background-color: lightgreen;
+  height: 100px;
+  padding: 30px;
+}
+.image {
+  width: 100px;
+}
+.disabled {
+  visibility: hidden;
+}

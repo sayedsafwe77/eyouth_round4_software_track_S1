@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .disabled {
+        display: none;
+        transition: color 5s ease;
+      }
+      .fadeAnimation {
+        animation: CustomAnimation 1s ease;
+      }
+      /* 1s */
+      /* 0 0.2s 0.4s 0.6s 0.8s 1s*/
+      @keyframes CustomAnimation {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <button>click</button>
+    <ul
+      id="list-1"
+      class="list disabled"
+      style="color: red"
+      title="context menu list"
+    >
+      <li>option 1</li>
+      <li>option 2</li>
+      <li>option 3</li>
+    </ul> -->
+
+    <div>
+      <img src="../images/iphone17/e.jpeg" alt="" />
+      <img src="../images/iphone17/e.jpeg" alt="" />
+      <img src="../images/iphone17/e.jpeg" alt="" />
+    </div>
+    <a class="google-link" href="https://google.com">Google</a>
+    <script src="./dom.js"></script>
+  </body>
+</html>
