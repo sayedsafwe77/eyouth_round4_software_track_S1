@@ -1,10 +1,3 @@
-// console.log("before timeout");
-
-// setTimeout((event) => {
-//   console.log("Timer is done");
-// }, 0);
-
-// console.log("after timeout");
 var limit = 10;
 var skip = 0;
 function addListenerForStatusChange() {
@@ -19,8 +12,6 @@ function addListenerForStatusChange() {
 }
 async function handleDisplay(skip, limit) {
   var data = await getTodos(skip, limit);
-  createPaginationLinks(data);
-  listenForPaginationLinks();
   var list_items = generateListItems(data.todos);
 
   insertListItems(list_items);
@@ -44,37 +35,6 @@ function generateListItems(todos) {
     }></li>`;
   }
   return list_items;
-}
-function createPaginationLinks(data) {
-  var limit = data.limit;
-  var total = data.total;
-  var linksCount = Math.ceil(total / limit);
-  var links = "";
-  for (var i = 0; i < linksCount; i++) {
-    links +=
-      `<a class="pagination-link"  data-skip="${i * limit}">` +
-      (i + 1) +
-      "</a>";
-  }
-  document.querySelector(".pagination-links").innerHTML = links;
-}
-function listenForPaginationLinks() {
-  var links = document.querySelectorAll(".pagination-link");
-  for (var link of links) {
-    link.addEventListener("click", async (event) => {
-      var s = event.target.dataset.skip;
-      skip = +s;
-      var oldActive = event.target.parentElement.querySelector(".active");
-      if (oldActive) {
-        oldActive.classList.remove("active");
-      }
-      event.target.classList.add("active");
-      var data = await getTodos(s, limit);
-      var list_items = generateListItems(data.todos);
-      insertListItems(list_items);
-      addListenerForStatusChange();
-    });
-  }
 }
 function getTodoStatus(todo) {
   var todos = JSON.parse(sessionStorage.getItem("todos")) ?? [];
@@ -122,34 +82,3 @@ function saveTodoChangeIntoStorage(todo) {
   }
   sessionStorage.setItem("todos", JSON.stringify(todos));
 }
-
-// function getTodos() {
-//   return new Promise((fulfilled) => {
-//     var todos = [];
-//     setTimeout(() => {
-//       todos = [
-//         {
-//           userId: 1,
-//           id: 1,
-//           title: "delectus aut autem",
-//           completed: false,
-//         },
-//         {
-//           userId: 1,
-//           id: 2,
-//           title: "quis ut nam facilis et officia qui",
-//           completed: false,
-//         },
-//         {
-//           userId: 1,
-//           id: 3,
-//           title: "fugiat veniam minus",
-//           completed: false,
-//         },
-//       ];
-//       fulfilled(todos);
-//     }, 100);
-//   });
-// }
-
-// fetch("").then((data) => console.log(data));

@@ -4,6 +4,7 @@
   width: 200px;
   padding: 30px;
 }
+
 .parent {
   background-color: lightcoral;
   height: 200px;
@@ -19,4 +20,22 @@
 }
 .disabled {
   visibility: hidden;
+}
+.pagination-links {
+  display: flex;
+  gap: 0.7rem;
+  justify-content: center;
+}
+.pagination-link {
+  background: rgb(74, 74, 111);
+  color: white;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+}
+.pagination-link:hover {
+  cursor: pointer;
+  background: seagreen;
+}
+.active {
+  background: seagreen;
 }
