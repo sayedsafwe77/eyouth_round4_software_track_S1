@@ -1,0 +1,19 @@
+.campains {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.campain {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: lightsteelblue;
+}
+.campain:hover {
+  cursor: pointer;
+  background: steelblue;
+}
+.leads h3 {
+  text-align: center;
+}
