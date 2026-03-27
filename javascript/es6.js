@@ -109,12 +109,12 @@
 // Array.from(btns).forEach((btn) =>
 //   btn.addEventListener("click", () => console.log(btn.textContent))
 // );
-const ob = {
-  id: 1,
-  name: "ahmed",
-  gender: "male",
-  salary: 5000,
-};
+// const ob = {
+//   id: 1,
+//   name: "ahmed",
+//   gender: "male",
+//   salary: 5000,
+// };
 // const ob2 = { ...ob, ...{ name: "sayed", age: 30 } };
 // Object.assign(ob, { name: "sayed", age: 30 });
 // console.log(ob2);
@@ -277,14 +277,14 @@ const ob = {
 //     };
 //   })()
 // );
-const user = {
-  id: 1,
-  name: "ahmed",
-  firstName: "ahmed",
-  lastName: "omar",
-  gender: "male",
-  salary: 5000,
-};
+// const user = {
+//   id: 1,
+//   name: "ahmed",
+//   firstName: "ahmed",
+//   lastName: "omar",
+//   gender: "male",
+//   salary: 5000,
+// };
 
 // function greet(message1, message2) {
 //   return message1 + ", " + message2 + ", " + this.name;
@@ -302,3 +302,78 @@ const user = {
 // const arr3 = Reflect.construct(Array, ["nada", "menna", "esraa"]);
 // console.log(arr, arr2, arr3);
 // Reflect.get(user,'name')
+// function User(firstName, lastName) {
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+// }
+// User.prototype.fullName = function () {
+//   return `${this.firstName} ${this.lastName}`;
+// };
+// function Admin(...args) {
+//   User.apply(this, args);
+//   this.age = args[2];
+// }
+// Admin.prototype.getAge = function () {
+//   return this.age;
+// };
+// Admin.prototype = Object.assign(Admin.prototype, User.prototype);
+// const user = new Admin("omar", "ahmed", 20);
+// console.log(user.fullName());
+
+// const user2 = new User("mahmoud", "mohamed");
+// console.log(user.firstName);
+// Object.prototype.summation = function () {
+//   return this.reduce((acc, el) => acc + el, 0);
+// };
+// Object.prototype.testProto = function () {
+//   console.log("welcome from object class");
+// };
+// Array.prototype.testProto = function () {
+//   console.log("welcome from array class");
+// };
+// const arr = [1, 2, 3, 4];
+// const arr2 = [10, 20, 30, 40];
+// console.log(arr2.testProto());
+
+class User {
+  constructor(firstName, lastName) {
+    if (new.target === User) {
+      throw new Error("cannot instantiate abstract class");
+    }
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+// class Admin extends User {
+//   constructor(...args) {
+//     super(...args);
+//     this.__role = "admin";
+//   }
+//   set role(role) {
+//     this.__role = role;
+//   }
+//   get role() {
+//     return this.__role;
+//   }
+//   getFullName(message) {
+//     return `${super.getFullName()} ${this.role}`;
+//   }
+// }
+// const user = new Admin("sayed", "safwet");
+// user.role = "super admin";
+// console.log(user.getFullName());
+// import {function1} from "./file2.js";
+
+// const arr = [1, 1, 1, 2, 3, 2];
+// sayed();
+
+// function isEqual(a, b) {
+//   return Math.abs(a - b) <= Number.EPSILON;
+// }
+// console.log(Number.MIN_SAFE_INTEGER);
+let x = 2;
+x **= 3;
+console.log(x);
